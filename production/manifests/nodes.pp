@@ -7,6 +7,13 @@ node 'wikitest' {
  }
 }
 class linux {
+
+  $admintools = ['git', 'nano', 'screen']
+  package { $admintools:
+   ensure => 'installed',
+  
+  }
+
    file { '/info.txt':
      ensure  => 'present',
 	 content => inline_template("Created by Puppet at <%= Time.now %>\n"),
