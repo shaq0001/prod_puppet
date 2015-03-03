@@ -1,10 +1,10 @@
 node 'wiki' { 
- class { 'linux':
+ class { 'linux':}
+ class { 'mediawiki':}
  }
-}
 node 'wikitest' { 
- class { 'linux':
- }
+ class { 'linux': }
+ class { 'mediawiki': }
 }
 class linux {
 
