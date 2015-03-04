@@ -57,6 +57,13 @@ class mediawiki {
   subscribe  => Package[$phpmysql],
  }
  
- class {'::apache::mod::php':
+ class {'::apache::mod::php':}
+
+  vcsrepo { '/var/www/html':
+   ensure  => 'present',
+   provider => 'git',
+   source  => "https://github.com/wikimedia/mediawiki.git",
+   revision => 'REL1_23',
 }
+
 }
